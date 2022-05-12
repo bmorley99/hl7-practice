@@ -8,7 +8,7 @@ documents = "C:\\users\\bmorley\\documents\\"
 
 test_hl7_file = documents + 'file.oru'
 
-pid_segement_name = Pid_segement_parse(test_hl7_file).pid_segement_parse(3)
+pid_segement_name = Pid_segement_parse(test_hl7_file).pid_segement_parse(0)
 
 
 print(pid_segement_name)

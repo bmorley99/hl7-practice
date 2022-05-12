@@ -1,5 +1,4 @@
-import os
-cd = os.getcwd()
+
 class hl7_parse():
 
     def __init__(self, filename):
@@ -7,11 +6,15 @@ class hl7_parse():
 
     def parse_segement(self, input):
         with open(self.filename, 'rt') as file:
+
             lines = file.readlines()
+            print(lines)
 
             segement_line_list = []
             for seg in lines:                   #loops through the file
-                if str(input) in seg[0:3]:      #Checks to make sure the file has a title indicator in this case PID
+                if "PID" in seg[0:3]:
+                    print(seg)
+                    print( segement_line_list)#Checks to make sure the file has a title indicator in this case PID
                     segement_line_list.append(seg) #if it has the indicator it adds that to the list segement_line_list
                     #output ['PID|1||Toka^Scott||19790301|M|||1170 S State St^^EPHRATA^PA^17522||\n']
 
